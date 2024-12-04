@@ -1,2 +1,3 @@
-# RD-flutter
-İstinye university student project 
+# flutter_app
+
+A new Flutter project.
