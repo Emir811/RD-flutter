@@ -1,4 +1,3 @@
-
 import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -13,14 +12,13 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 141, 141, 141), // .fromARGB(255, 35, 47, 59),
       body: SizedBox.expand(
         // width: double.infinity,
         child: Column(
           children: [
             // Logo bölümü
             Expanded(
-              child: SizedBox(
+              child: Container(
                 width: 150,
                 height: 150,
                 child: Image.asset(
@@ -49,8 +47,8 @@ class LoadingScreen extends StatelessWidget {
                 ),
               ),
             ),
-            
-            const SizedBox(height: 20),
+            // biraz boslok lazim
+            SizedBox(height: 20),
           ],
         ),
       ),
