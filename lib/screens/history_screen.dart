@@ -11,27 +11,27 @@ class HistoryScreen extends StatefulWidget {
 }
 
 class _HistoryScreenState extends State<HistoryScreen> {
-  // Fotoğraf yollarını içeren listeyi oluşturuyoruz
   final List<String> productImages = [
-    "assets/images/urun1.webp", // İlk fotoğraf
-    "assets/images/urun9.webp", // İkinci fotoğraf
-    "assets/images/urun10.webp", // Üçüncü fotoğraf (örnek olarak aynı fotoğrafı ekledim)
-    "assets/images/urun8.jpg", // Dördüncü fotoğraf (örnek olarak aynı fotoğrafı ekledim)
+    "assets/images/urun1.webp",
+    "assets/images/urun9.webp",
+    "assets/images/urun10.webp",
+    "assets/images/urun8.jpg",
   ];
-
-  // Ürün adlarını içeren listeyi oluşturuyoruz
   final List<String> productNames = [
-    "Oyuncak Araba", // İlk ürün ismi
-    "ps5 dualsens", // İkinci ürün ismi
-    "oyuncak ev", // Üçüncü ürün ismi (örnek)
-    "eyfel lego", // Dördüncü ürün ismi (örnek)
+    "Oyuncak Araba",
+    "ps5 dualsens",
+    "oyuncak ev",
+    "eyfel lego",
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Geçmişte baktıklarınız'),
+        title: const Text('Geçmiş',
+            style: TextStyle(fontWeight: FontWeight.bold)),
+        centerTitle: true,
+        elevation: 2,
         actions: [
           IconButton(
             icon: Icon(Icons.filter_list),
@@ -42,32 +42,43 @@ class _HistoryScreenState extends State<HistoryScreen> {
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.all(8),
+            padding: EdgeInsets.all(12),
             child: Card(
+              elevation: 2,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 child: Row(
                   children: [
                     Text('Sıralama:',
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium
-                            ?.copyWith(color: Colors.purple)), // Mor renk
-                    SizedBox(width: 8),
+                            ?.copyWith(
+                              color: Colors.purple.shade700,
+                              fontWeight: FontWeight.w600,
+                            )),
+                    SizedBox(width: 12),
                     ChoiceChip(
-                      label: Text('En Yeni'),
+                      label: Text('En Yeni',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          )),
                       selected: true,
                       onSelected: (_) {},
-                      selectedColor: Colors.purple,
-                      backgroundColor: Colors.grey[200], // Arka plan rengi
+                      selectedColor: Colors.purple.shade600,
+                      backgroundColor: Colors.grey.shade200,
                     ),
                     SizedBox(width: 8),
                     ChoiceChip(
                       label: Text('Fiyat'),
                       selected: false,
                       onSelected: (_) {},
-                      selectedColor: Colors.purple,
-                      backgroundColor: Colors.grey[200], // Arka plan rengi
+                      selectedColor: Colors.purple.shade600,
+                      backgroundColor: Colors.grey.shade200,
                     ),
                   ],
                 ),
@@ -76,84 +87,122 @@ class _HistoryScreenState extends State<HistoryScreen> {
           ),
           Expanded(
             child: GridView.builder(
-              padding: EdgeInsets.all(8),
+              padding: EdgeInsets.all(12),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, // Burayı 2'den 4'e çıkardık
-                childAspectRatio: 0.75, // Gerekirse bu değeri de ayarlayabilirsiniz
-                mainAxisSpacing: 8,
-                crossAxisSpacing: 8,
+                crossAxisCount: 2,
+                childAspectRatio: 0.68,
+                mainAxisSpacing: 12,
+                crossAxisSpacing: 12,
               ),
-              itemCount: productImages.length, // Fotoğraf sayısını liste uzunluğuna göre ayarlıyoruz
-              itemBuilder: (context, index) => Card(
-                clipBehavior: Clip.antiAlias,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Stack(
+              itemCount: productImages.length,
+              itemBuilder: (context, index) => Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Card(
+                    elevation: 3,
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        AspectRatio(
-                          aspectRatio: 1,
-                          child: Container(
-                            color: Theme.of(context)
-                                .colorScheme
-                                .surfaceContainerHighest,
-                            child: Image.asset(
-                              productImages[index], // Fotoğrafı dinamik olarak alıyoruz
-                              fit: BoxFit.cover,
+                        Stack(
+                          children: [
+                            AspectRatio(
+                              aspectRatio: 1,
+                              child: Container(
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .surfaceContainerHighest,
+                                child: Image.asset(
+                                  productImages[index],
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
                             ),
-                          ),
+                            Positioned(
+                              top: 8,
+                              right: 8,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.1),
+                                      blurRadius: 4,
+                                      spreadRadius: 1,
+                                    ),
+                                  ],
+                                ),
+                                child: IconButton(
+                                  icon: Icon(Icons.favorite_border,
+                                      color: Colors.purple.shade600),
+                                  onPressed: () {},
+                                  constraints: BoxConstraints(
+                                    minWidth: 32,
+                                    minHeight: 32,
+                                  ),
+                                  padding: EdgeInsets.all(4),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        Positioned(
-                          top: 8,
-                          right: 8,
-                          child: IconButton(
-                            icon: Icon(Icons.favorite_border),
-                            style: IconButton.styleFrom(
-                              backgroundColor:
-                                  Theme.of(context).colorScheme.surface,
-                            ),
-                            onPressed: () {},
+                        Padding(
+                          padding: EdgeInsets.all(12),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                productNames[index],
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium
+                                    ?.copyWith(
+                                      color: Colors.purple.shade700,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              SizedBox(height: 8),
+                              Text(
+                                '₺${((index + 1) * 2000).toString().replaceAllMapped(
+                                      RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                                      (Match m) => '${m[1]}.',
+                                    )}',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge
+                                    ?.copyWith(
+                                      color: Colors.purple.shade800,
+                                      fontWeight: FontWeight.w800,
+                                    ),
+                              ),
+                              SizedBox(height: 12),
+                              FilledButton.icon(
+                                onPressed: () {},
+                                icon: Icon(Icons.shopping_cart, size: 18),
+                                label: Text('Sepete Ekle',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                style: FilledButton.styleFrom(
+                                  backgroundColor: Colors.purple.shade600,
+                                  minimumSize: Size(double.infinity, 40),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            productNames[index], // Ürün ismini dinamik olarak alıyoruz
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium
-                                ?.copyWith(color: Colors.purple), // Mor renk
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          SizedBox(height: 4),
-                          Text(
-                            '₺${(index + 1) * 2000}', // Fiyatı dinamik olarak ayarlıyoruz
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge
-                                ?.copyWith(color: Colors.purple), // Mor renk
-                          ),
-                          SizedBox(height: 8),
-                          FilledButton.icon(
-                            onPressed: () {},
-                            icon: Icon(Icons.shopping_cart, size: 18),
-                            label: Text('Sepete Ekle'),
-                            style: FilledButton.styleFrom(
-                              backgroundColor: Colors.purple, // Mor renk
-                              minimumSize: Size(double.infinity, 36),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -167,10 +216,17 @@ class _HistoryScreenState extends State<HistoryScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Filtreleme'),
+            Text('Filtreleme',
+                style: TextStyle(
+                  color: Colors.purple.shade700,
+                  fontWeight: FontWeight.bold,
+                )),
             IconButton(
               icon: Icon(Icons.close),
               onPressed: () => Navigator.pop(context),
@@ -183,7 +239,10 @@ class _HistoryScreenState extends State<HistoryScreen> {
           children: [
             Text(
               'Fiyat',
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.purple), // Mor renk
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: Colors.purple.shade700,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             SizedBox(height: 8),
             Row(
@@ -193,10 +252,16 @@ class _HistoryScreenState extends State<HistoryScreen> {
                     decoration: InputDecoration(
                       hintText: 'Min.',
                       prefixText: '₺',
-                      border: OutlineInputBorder(),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.purple), // Mor renk
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
                       ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide:
+                            BorderSide(color: Colors.purple.shade600),
+                      ),
+                      contentPadding:
+                          EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     ),
                     keyboardType: TextInputType.number,
                   ),
@@ -207,10 +272,16 @@ class _HistoryScreenState extends State<HistoryScreen> {
                     decoration: InputDecoration(
                       hintText: 'Max.',
                       prefixText: '₺',
-                      border: OutlineInputBorder(),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.purple), // Mor renk
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
                       ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide:
+                            BorderSide(color: Colors.purple.shade600),
+                      ),
+                      contentPadding:
+                          EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     ),
                     keyboardType: TextInputType.number,
                   ),
@@ -220,61 +291,106 @@ class _HistoryScreenState extends State<HistoryScreen> {
             SizedBox(height: 16),
             Text(
               'Kategoriler',
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.purple), // Mor renk
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: Colors.purple.shade700,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             SizedBox(height: 8),
             Wrap(
               spacing: 8,
+              runSpacing: 8,
               children: [
                 FilterChip(
                   label: Text('Elektronik'),
                   selected: false,
                   onSelected: (_) {},
-                  selectedColor: Colors.purple,
+                  selectedColor: Colors.purple.shade100,
+                  checkmarkColor: Colors.purple.shade700,
+                  backgroundColor: Colors.grey.shade100,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                 ),
                 FilterChip(
-                  label: Text('ev'),
+                  label: Text('Ev'),
                   selected: false,
                   onSelected: (_) {},
-                  selectedColor: Colors.purple,
+                  selectedColor: Colors.purple.shade100,
+                  checkmarkColor: Colors.purple.shade700,
+                  backgroundColor: Colors.grey.shade100,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                 ),
                 FilterChip(
-                  label: Text('aksesuar'),
-                  selected: false,
-                  onSelected: (_) {} ,
-                  selectedColor: Colors.purple,
-                ),
-                FilterChip(
-                  label: Text('dekor'),
-                  selected: false,
-                  onSelected: (_) {},
-                  selectedColor: Colors.purple,
-                ),
-                FilterChip(
-                  label: Text('araba'),
+                  label: Text('Aksesuar'),
                   selected: false,
                   onSelected: (_) {},
-                  selectedColor: Colors.purple,
+                  selectedColor: Colors.purple.shade100,
+                  checkmarkColor: Colors.purple.shade700,
+                  backgroundColor: Colors.grey.shade100,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                 ),
                 FilterChip(
-                  label: Text('tekstil'),
+                  label: Text('Dekor'),
                   selected: false,
                   onSelected: (_) {},
-                  selectedColor: Colors.purple,
+                  selectedColor: Colors.purple.shade100,
+                  checkmarkColor: Colors.purple.shade700,
+                  backgroundColor: Colors.grey.shade100,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                FilterChip(
+                  label: Text('Araba'),
+                  selected: false,
+                  onSelected: (_) {},
+                  selectedColor: Colors.purple.shade100,
+                  checkmarkColor: Colors.purple.shade700,
+                  backgroundColor: Colors.grey.shade100,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                FilterChip(
+                  label: Text('Tekstil'),
+                  selected: false,
+                  onSelected: (_) {},
+                  selectedColor: Colors.purple.shade100,
+                  checkmarkColor: Colors.purple.shade700,
+                  backgroundColor: Colors.grey.shade100,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                 ),
               ],
             ),
             SizedBox(height: 16),
             Text(
               'Arama',
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.purple), // Mor renk
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: Colors.purple.shade700,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             SizedBox(height: 8),
             TextField(
               decoration: InputDecoration(
-                hintText: 'istediğiniz ürünü giriniz...',
-                prefixIcon: Icon(Icons.search, color: Colors.purple), // Mor renk
-                border: OutlineInputBorder(),
+                hintText: 'Ürün ara...',
+                prefixIcon: Icon(Icons.search, color: Colors.purple.shade600),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: Colors.purple.shade600),
+                ),
+                filled: true,
+                fillColor: Colors.grey.shade50,
               ),
             ),
           ],
@@ -282,12 +398,22 @@ class _HistoryScreenState extends State<HistoryScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('sil', style: TextStyle(color: Colors.purple)), // Mor renk
+            child: Text(
+              'Temizle',
+              style: TextStyle(color: Colors.purple.shade700),
+            ),
           ),
-          FilledButton(
+          ElevatedButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('onayla'),
-            style: FilledButton.styleFrom(backgroundColor: Colors.purple), // Mor renk
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.purple.shade600,
+              foregroundColor: Colors.white,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+            child: Text('Uygula', style: TextStyle(fontWeight: FontWeight.bold)),
           ),
         ],
       ),
