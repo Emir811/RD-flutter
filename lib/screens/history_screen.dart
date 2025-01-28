@@ -34,181 +34,184 @@ class _HistoryScreenState extends State<HistoryScreen> {
         elevation: 2,
         actions: [
           IconButton(
-            icon: Icon(Icons.filter_list),
+            icon: const Icon(Icons.filter_list),
             onPressed: () => _showFilterDialog(context),
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(12),
-            child: Card(
-              elevation: 2,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                child: Row(
-                  children: [
-                    Text('Sıralama:',
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium
-                            ?.copyWith(
-                              color: Colors.purple.shade700,
-                              fontWeight: FontWeight.w600,
+      body: Container(
+        color: const Color.fromARGB(255, 177, 177, 177), // Set background color here
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(12),
+              child: Card(
+                elevation: 2,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  child: Row(
+                    children: [
+                      Text('Sıralama:',
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium
+                              ?.copyWith(
+                                color: Colors.purple.shade700,
+                                fontWeight: FontWeight.w600,
+                              )),
+                      const SizedBox(width: 12),
+                      ChoiceChip(
+                        label: const Text('En Yeni',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
                             )),
-                    SizedBox(width: 12),
-                    ChoiceChip(
-                      label: Text('En Yeni',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          )),
-                      selected: true,
-                      onSelected: (_) {},
-                      selectedColor: Colors.purple.shade600,
-                      backgroundColor: Colors.grey.shade200,
-                    ),
-                    SizedBox(width: 8),
-                    ChoiceChip(
-                      label: Text('Fiyat'),
-                      selected: false,
-                      onSelected: (_) {},
-                      selectedColor: Colors.purple.shade600,
-                      backgroundColor: Colors.grey.shade200,
-                    ),
-                  ],
+                        selected: true,
+                        onSelected: (_) {},
+                        selectedColor: Colors.purple.shade600,
+                        backgroundColor: Colors.grey.shade200,
+                      ),
+                      const SizedBox(width: 8),
+                      ChoiceChip(
+                        label: const Text('Fiyat'),
+                        selected: false,
+                        onSelected: (_) {},
+                        selectedColor: Colors.purple.shade600,
+                        backgroundColor: Colors.grey.shade200,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          Expanded(
-            child: GridView.builder(
-              padding: EdgeInsets.all(12),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 0.68,
-                mainAxisSpacing: 12,
-                crossAxisSpacing: 12,
-              ),
-              itemCount: productImages.length,
-              itemBuilder: (context, index) => Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Card(
-                    elevation: 3,
-                    clipBehavior: Clip.antiAlias,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Stack(
-                          children: [
-                            AspectRatio(
-                              aspectRatio: 1,
-                              child: Container(
-                                color: Theme.of(context)
-                                    .colorScheme
-                                    .surfaceContainerHighest,
-                                child: Image.asset(
-                                  productImages[index],
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              top: 8,
-                              right: 8,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.1),
-                                      blurRadius: 4,
-                                      spreadRadius: 1,
-                                    ),
-                                  ],
-                                ),
-                                child: IconButton(
-                                  icon: Icon(Icons.favorite_border,
-                                      color: Colors.purple.shade600),
-                                  onPressed: () {},
-                                  constraints: BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
-                                  ),
-                                  padding: EdgeInsets.all(4),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(12),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+            Expanded(
+              child: GridView.builder(
+                padding: const EdgeInsets.all(12),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.68,
+                  mainAxisSpacing: 12,
+                  crossAxisSpacing: 12,
+                ),
+                itemCount: productImages.length,
+                itemBuilder: (context, index) => Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Card(
+                      elevation: 3,
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Stack(
                             children: [
-                              Text(
-                                productNames[index],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium
-                                    ?.copyWith(
-                                      color: Colors.purple.shade700,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
+                              AspectRatio(
+                                aspectRatio: 1,
+                                child: Container(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .surfaceContainerHighest,
+                                  child: Image.asset(
+                                    productImages[index],
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
-                              SizedBox(height: 8),
-                              Text(
-                                '₺${((index + 1) * 2000).toString().replaceAllMapped(
-                                      RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
-                                      (Match m) => '${m[1]}.',
-                                    )}',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleLarge
-                                    ?.copyWith(
-                                      color: Colors.purple.shade800,
-                                      fontWeight: FontWeight.w800,
+                              Positioned(
+                                top: 8,
+                                right: 8,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(20),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.1),
+                                        blurRadius: 4,
+                                        spreadRadius: 1,
+                                      ),
+                                    ],
+                                  ),
+                                  child: IconButton(
+                                    icon: Icon(Icons.favorite_border,
+                                        color: Colors.purple.shade600),
+                                    onPressed: () {},
+                                    constraints: const BoxConstraints(
+                                      minWidth: 32,
+                                      minHeight: 32,
                                     ),
-                              ),
-                              SizedBox(height: 12),
-                              FilledButton.icon(
-                                onPressed: () {},
-                                icon: Icon(Icons.shopping_cart, size: 18),
-                                label: Text('Sepete Ekle',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
-                                style: FilledButton.styleFrom(
-                                  backgroundColor: Colors.purple.shade600,
-                                  minimumSize: Size(double.infinity, 40),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8),
+                                    padding: const EdgeInsets.all(4),
                                   ),
                                 ),
                               ),
                             ],
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.all(12),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  productNames[index],
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium
+                                      ?.copyWith(
+                                        color: Colors.purple.shade700,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                const SizedBox(height: 8),
+                                Text(
+                                  '₺${((index + 1) * 2000).toString().replaceAllMapped(
+                                        RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                                        (Match m) => '${m[1]}.',
+                                      )}',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleLarge
+                                      ?.copyWith(
+                                        color: Colors.purple.shade800,
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                ),
+                                const SizedBox(height: 12),
+                                FilledButton.icon(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.shopping_cart, size: 18),
+                                  label: const Text('Sepete Ekle',
+                                      style:
+                                          TextStyle(fontWeight: FontWeight.bold)),
+                                  style: FilledButton.styleFrom(
+                                    backgroundColor: Colors.purple.shade600,
+                                    minimumSize: const Size(double.infinity, 40),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 
@@ -228,7 +231,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   fontWeight: FontWeight.bold,
                 )),
             IconButton(
-              icon: Icon(Icons.close),
+              icon: const Icon(Icons.close),
               onPressed: () => Navigator.pop(context),
             ),
           ],
@@ -244,7 +247,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                     fontWeight: FontWeight.bold,
                   ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Row(
               children: [
                 Expanded(
@@ -261,12 +264,12 @@ class _HistoryScreenState extends State<HistoryScreen> {
                             BorderSide(color: Colors.purple.shade600),
                       ),
                       contentPadding:
-                          EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                          const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     ),
                     keyboardType: TextInputType.number,
                   ),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
@@ -281,14 +284,14 @@ class _HistoryScreenState extends State<HistoryScreen> {
                             BorderSide(color: Colors.purple.shade600),
                       ),
                       contentPadding:
-                          EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                          const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     ),
                     keyboardType: TextInputType.number,
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               'Kategoriler',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -296,13 +299,13 @@ class _HistoryScreenState extends State<HistoryScreen> {
                     fontWeight: FontWeight.bold,
                   ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Wrap(
               spacing: 8,
               runSpacing: 8,
               children: [
                 FilterChip(
-                  label: Text('Elektronik'),
+                  label: const Text('Elektronik'),
                   selected: false,
                   onSelected: (_) {},
                   selectedColor: Colors.purple.shade100,
@@ -313,7 +316,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   ),
                 ),
                 FilterChip(
-                  label: Text('Ev'),
+                  label: const Text('Ev'),
                   selected: false,
                   onSelected: (_) {},
                   selectedColor: Colors.purple.shade100,
@@ -324,7 +327,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   ),
                 ),
                 FilterChip(
-                  label: Text('Aksesuar'),
+                  label: const Text('Aksesuar'),
                   selected: false,
                   onSelected: (_) {},
                   selectedColor: Colors.purple.shade100,
@@ -335,7 +338,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   ),
                 ),
                 FilterChip(
-                  label: Text('Dekor'),
+                  label: const Text('Dekor'),
                   selected: false,
                   onSelected: (_) {},
                   selectedColor: Colors.purple.shade100,
@@ -346,7 +349,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   ),
                 ),
                 FilterChip(
-                  label: Text('Araba'),
+                  label: const Text('Araba'),
                   selected: false,
                   onSelected: (_) {},
                   selectedColor: Colors.purple.shade100,
@@ -357,7 +360,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   ),
                 ),
                 FilterChip(
-                  label: Text('Tekstil'),
+                  label: const Text('Tekstil'),
                   selected: false,
                   onSelected: (_) {},
                   selectedColor: Colors.purple.shade100,
@@ -369,7 +372,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               'Arama',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -377,7 +380,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                     fontWeight: FontWeight.bold,
                   ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             TextField(
               decoration: InputDecoration(
                 hintText: 'Ürün ara...',
@@ -413,7 +416,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 borderRadius: BorderRadius.circular(8),
               ),
             ),
-            child: Text('Uygula', style: TextStyle(fontWeight: FontWeight.bold)),
+            child: const Text('Uygula', style: TextStyle(fontWeight: FontWeight.bold)),
           ),
         ],
       ),

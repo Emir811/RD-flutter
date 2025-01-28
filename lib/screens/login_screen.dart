@@ -16,22 +16,18 @@ class _LoginScreenState extends State<LoginScreen> {
   girisYap() {
     if (epostaYonetici.text.isEmpty || sifreYonetici.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text("Bilgileriniz Giriniz"),
-          // action: SnackBarAction(label: "Kapat", onPressed: () {}),
-          // margin: EdgeInsets.all(20),
+        const SnackBar(
+          content: Text("Yanlış e-posta veya şifre"),
           behavior: SnackBarBehavior.floating,
           backgroundColor: Colors.red,
           showCloseIcon: true,
         ),
       );
     } else {
-      if (sifreYonetici.text.length < 8) {
+      if (sifreYonetici.text.length < 6) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text("Sifre Minimum 8 haneli olabilir."),
-            // action: SnackBarAction(label: "Kapat", onPressed: () {}),
-            // margin: EdgeInsets.all(20),
+          const SnackBar(
+            content: Text("Şifre minimum 6 haneli olabilir."),
             behavior: SnackBarBehavior.floating,
             backgroundColor: Colors.red,
             showCloseIcon: true,
@@ -46,89 +42,129 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.purple, // Mor renkli AppBar
+        title: const Text("Giriş Yap", style: TextStyle(fontSize: 18)),
+        centerTitle: true,
+        elevation: 0, // AppBar gölgesini kaldırdım
+      ),
       body: Center(
         child: SizedBox(
           width: 300,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // Logo
+              Container(
+                width: 150,
+                height: 150,
+                child: Image.asset(
+                  'assets/images/logo.png',
+                  fit: BoxFit.contain,
+                ),
+              ),
+              const SizedBox(height: 40),
+
+              // E-posta TextField
               TextField(
                 controller: epostaYonetici,
                 decoration: InputDecoration(
                   hintText: "E-Posta",
+                  hintStyle: const TextStyle(color: Colors.white),
+                  filled: true,
+                  fillColor: Colors.purple.shade700,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide.none,
                   ),
-                  prefixIcon: Icon(Icons.email),
+                  prefixIcon: const Icon(Icons.email, color: Colors.white),
                 ),
+                style: const TextStyle(color: Colors.white),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
+
+              // Şifre TextField
               TextFormField(
                 obscureText: true,
                 controller: sifreYonetici,
                 decoration: InputDecoration(
-                  hintText: "Sifre",
+                  hintText: "Şifre",
+                  hintStyle: const TextStyle(color: Colors.white),
+                  filled: true,
+                  fillColor: Colors.purple.shade700,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide.none,
                   ),
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: const Icon(Icons.lock, color: Colors.white),
                 ),
+                style: const TextStyle(color: Colors.white),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
+
+              // Giriş Yap Butonu
               ElevatedButton(
                 onPressed: girisYap,
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50),
+                  minimumSize: const Size(double.infinity, 50), backgroundColor: Colors.purple, // Mor arka plan
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                child: const Text("Giris Yap", style: TextStyle(fontSize: 16)),
+                child: const Text("Giriş Yap", style: TextStyle(fontSize: 16)),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
+
+              // Kayıt Ol Butonu
               ElevatedButton(
                 onPressed: () {
                   context.pushReplacement("/register");
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50),
+                  minimumSize: const Size(double.infinity, 50), backgroundColor: Colors.purple, // Mor arka plan
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                child: const Text("Kayit Ol", style: TextStyle(fontSize: 16)),
+                child: const Text("Kayıt Ol", style: TextStyle(fontSize: 16)),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
+
+              // Google ile giriş butonu
               OutlinedButton.icon(
                 onPressed: () {},
                 style: OutlinedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50),
+                  minimumSize: const Size(double.infinity, 50),
+                  side: const BorderSide(color: Colors.purple, width: 2),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
                 icon: Image.asset('assets/icons/google_icon.png', height: 24),
-                label: Text("Google ile Giris Yap",
-                    style: TextStyle(fontSize: 16)),
+                label: const Text("Google ile Giriş Yap",
+                    style: TextStyle(fontSize: 16, color: Colors.purple)),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
+
+              // Apple ID ile giriş butonu
               OutlinedButton.icon(
                 onPressed: () {},
                 style: OutlinedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50),
+                  minimumSize: const Size(double.infinity, 50),
+                  side: const BorderSide(color: Colors.purple, width: 2),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
                 icon: Image.asset('assets/icons/apple_icon.png', height: 24),
-                label: Text("Apple ID ile Giris Yap",
-                    style: TextStyle(fontSize: 16)),
+                label: const Text("Apple ID ile Giriş Yap",
+                    style: TextStyle(fontSize: 16, color: Colors.purple)),
               ),
             ],
           ),
         ),
       ),
+      backgroundColor: const Color.fromARGB(255, 177, 177, 177), 
     );
   }
 }

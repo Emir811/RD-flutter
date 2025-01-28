@@ -14,7 +14,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Profil",
           style: TextStyle(
             color: Colors.white,
@@ -26,13 +26,13 @@ class ProfileScreen extends StatelessWidget {
         elevation: 0,
         actions: [
           Container(
-            margin: EdgeInsets.only(right: 8),
+            margin: const EdgeInsets.only(right: 8),
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.2),
               borderRadius: BorderRadius.circular(12),
             ),
             child: IconButton(
-              icon: Icon(CupertinoIcons.moon, color: Colors.white),
+              icon: const Icon(CupertinoIcons.moon, color: Colors.white),
               onPressed: () {
                 context.read<ThemeProvider>().toggleTheme();
               },
@@ -41,7 +41,7 @@ class ProfileScreen extends StatelessWidget {
         ],
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
         children: [
           Card(
             color: Colors.white,
@@ -51,7 +51,7 @@ class ProfileScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
             child: Padding(
-              padding: EdgeInsets.all(24),
+              padding: const EdgeInsets.all(24),
               child: Column(
                 children: [
                   Container(
@@ -68,7 +68,7 @@ class ProfileScreen extends StatelessWidget {
                     child: CircleAvatar(
                       radius: 60,
                       backgroundColor: Colors.purple.shade600,
-                      child: Text(
+                      child: const Text(
                         "EE",
                         style: TextStyle(
                           fontSize: 32,
@@ -79,16 +79,16 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 24),
+                  const SizedBox(height: 24),
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.purple.withOpacity(0.05),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: ListTile(
-                      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                       leading: Container(
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           color: Colors.purple.shade100,
                           borderRadius: BorderRadius.circular(12),
@@ -113,16 +113,16 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 12),
+                  const SizedBox(height: 12),
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.purple.withOpacity(0.05),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: ListTile(
-                      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                       leading: Container(
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           color: Colors.purple.shade100,
                           borderRadius: BorderRadius.circular(12),
@@ -151,11 +151,11 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 32),
+          const SizedBox(height: 32),
           FilledButton.icon(
             onPressed: () {},
-            icon: Icon(Icons.logout, color: Colors.white, size: 22),
-            label: Text(
+            icon: const Icon(Icons.logout, color: Colors.white, size: 22),
+            label: const Text(
               "Çıkış Yap",
               style: TextStyle(
                 color: Colors.white,
@@ -166,7 +166,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             style: FilledButton.styleFrom(
               backgroundColor: Colors.purple.shade600,
-              minimumSize: Size(double.infinity, 56),
+              minimumSize: const Size(double.infinity, 56),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
               ),
@@ -174,7 +174,7 @@ class ProfileScreen extends StatelessWidget {
               shadowColor: Colors.purple.withOpacity(0.3),
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           if (context.canPop())
             Container(
               decoration: BoxDecoration(
@@ -193,7 +193,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 style: TextButton.styleFrom(
-                  minimumSize: Size(double.infinity, 56),
+                  minimumSize: const Size(double.infinity, 56),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
                   ),
@@ -202,7 +202,7 @@ class ProfileScreen extends StatelessWidget {
             ),
         ],
       ),
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 }

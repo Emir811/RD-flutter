@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// import 'constants.dart';
-
 // theme_provider.dart
 class ThemeProvider with ChangeNotifier {
   bool _isDark = false;
@@ -14,47 +12,46 @@ class ThemeProvider with ChangeNotifier {
   }
 }
 
-const colors = {
-  "primary": Color.fromARGB(255, 65, 159, 217),
-  "onPrimary": Color.fromARGB(255, 255, 255, 255),
-  "secondary": Color.fromARGB(255, 241, 241, 241),
-  "onSecondary": Color.fromARGB(255, 82, 76, 100),
-  "surface": Color.fromARGB(255, 255, 255, 255),
-  "onSurface": Color.fromARGB(255, 82, 76, 100),
+const lightColors = {
+  "primary": Color(0xFF7F4A9F), // Mor tonları
+  "onPrimary": Color(0xFFFFFFFF), // Beyaz
+  "secondary": Color(0xFFF1F1F1), // Açık gri
+  "onSecondary": Color(0xFF524C64), // Koyu gri
+  "surface": Color(0xFFFFFFFF), // Beyaz
+  "onSurface": Color(0xFF524C64), // Koyu gri
   "success": Colors.green,
   "error": Colors.red,
   "onError": Colors.white,
 };
 
 const darkColors = {
-  "primary": Color.fromARGB(255, 43, 82, 120),
-  "onPrimary": Color.fromARGB(255, 241, 241, 241),
-  "secondary": Color.fromARGB(255, 32, 43, 54),
-  "onSecondary": Color.fromARGB(255, 241, 241, 241),
-  "surface": Color.fromARGB(255, 23, 33, 43),
-  "onSurface": Color.fromARGB(255, 245, 245, 245),
+  "primary": Color(0xFF512D6D), // Koyu mor
+  "onPrimary": Color(0xFFF1F1F1), // Beyaz
+  "secondary": Color(0xFF232B36), // Koyu gri
+  "onSecondary": Color(0xFFF1F1F1), // Beyaz
+  "surface": Color(0xFF171D2B), // Çok koyu gri
+  "onSurface": Color(0xFFF5F5F5), // Açık gri
   "success": Colors.green,
   "error": Colors.red,
   "onError": Colors.white,
 };
 
+// Gündüz modu teması (Light Theme)
 final lightTheme = ThemeData(
   brightness: Brightness.light,
   colorScheme: ColorScheme(
     brightness: Brightness.light,
-    primary: colors["primary"]!,
-    onPrimary: colors["onPrimary"]!,
-    secondary: colors["secondary"]!,
-    onSecondary: colors["onSecondary"]!,
-    error: colors["error"]!,
-    onError: colors["onError"]!,
-    surface: colors["surface"]!,
-    onSurface: colors["onSurface"]!,
+    primary: lightColors["primary"]!,
+    onPrimary: lightColors["onPrimary"]!,
+    secondary: lightColors["secondary"]!,
+    onSecondary: lightColors["onSecondary"]!,
+    error: lightColors["error"]!,
+    onError: lightColors["onError"]!,
+    surface: lightColors["surface"]!,
+    onSurface: lightColors["onSurface"]!,
   ),
   textTheme: TextTheme(
-    bodySmall: GoogleFonts.roboto(
-        // fontSize: 32,
-        ),
+    bodySmall: GoogleFonts.roboto(),
     bodyMedium: GoogleFonts.roboto(),
     bodyLarge: GoogleFonts.roboto(),
     labelSmall: GoogleFonts.roboto(),
@@ -72,6 +69,7 @@ final lightTheme = ThemeData(
   ),
 );
 
+// Gece modu teması (Dark Theme)
 final darkTheme = ThemeData(
   brightness: Brightness.dark,
   colorScheme: ColorScheme.dark(
@@ -86,9 +84,7 @@ final darkTheme = ThemeData(
     onSurface: darkColors["onSurface"]!,
   ),
   textTheme: TextTheme(
-    bodySmall: GoogleFonts.roboto(
-        // fontSize: 30,
-        ),
+    bodySmall: GoogleFonts.roboto(),
     bodyMedium: GoogleFonts.roboto(),
     bodyLarge: GoogleFonts.roboto(),
     labelSmall: GoogleFonts.roboto(),
@@ -105,176 +101,3 @@ final darkTheme = ThemeData(
     displayLarge: GoogleFonts.abrilFatface(),
   ),
 );
-
-class GoogleFonts {
-  static roboto() {}
-  
-  static abrilFatface() {}
-  
-  static aBeeZee() {}
-}
-
-// final lightTheme = ThemeData(
-//   brightness: Brightness.light,
-//   primarySwatch: Colors.blue,
-//   visualDensity: VisualDensity.adaptivePlatformDensity,
-//   textTheme: GoogleFonts.latoTextTheme().copyWith(
-//     titleSmall: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: colors["onSurface"],
-//       ),
-//     ),
-//     titleMedium: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: colors["onSurface"],
-//       ),
-//     ),
-//     titleLarge: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: colors["onSurface"],
-//       ),
-//     ),
-//     bodySmall: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: colors["onSurface"],
-//       ),
-//     ),
-//     bodyMedium: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: colors["onSurface"],
-//       ),
-//     ),
-//     bodyLarge: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: colors["onSurface"],
-//       ),
-//     ),
-//     headlineSmall: GoogleFonts.bebasNeue(
-//       textStyle: TextStyle(
-//         color: colors["onSurface"],
-//       ),
-//     ),
-//     headlineMedium: GoogleFonts.bebasNeue(
-//       textStyle: TextStyle(
-//         color: colors["onSurface"],
-//       ),
-//     ),
-//     headlineLarge: GoogleFonts.bebasNeue(
-//       textStyle: TextStyle(
-//         color: colors["onSurface"],
-//       ),
-//     ),
-//     displaySmall: GoogleFonts.bebasNeue(
-//       textStyle: TextStyle(
-//         color: colors["onSurface"],
-//       ),
-//     ),
-//     displayMedium: GoogleFonts.bebasNeue(
-//       textStyle: TextStyle(
-//         color: colors["onSurface"],
-//       ),
-//     ),
-//     displayLarge: GoogleFonts.bebasNeue(
-//       textStyle: TextStyle(
-//         color: colors["onSurface"],
-//       ),
-//     ),
-//     labelSmall: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: colors["onSurface"],
-//       ),
-//     ),
-//     labelMedium: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: colors["onSurface"],
-//       ),
-//     ),
-//     labelLarge: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: colors["onSurface"],
-//       ),
-//     ),
-//   ),
-// );
-
-// final darkTheme = ThemeData(
-//   brightness: Brightness.dark,
-//   primaryColor: Colors.blue,
-//   textTheme: GoogleFonts.latoTextTheme().copyWith(
-//     titleSmall: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: darkColors["onSurface"],
-//       ),
-//     ),
-//     titleMedium: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: darkColors["onSurface"],
-//       ),
-//     ),
-//     titleLarge: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: darkColors["onSurface"],
-//       ),
-//     ),
-//     bodySmall: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: darkColors["onSurface"],
-//       ),
-//     ),
-//     bodyMedium: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: darkColors["onSurface"],
-//       ),
-//     ),
-//     bodyLarge: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: darkColors["onSurface"],
-//       ),
-//     ),
-//     headlineSmall: GoogleFonts.bebasNeue(
-//       textStyle: TextStyle(
-//         color: darkColors["onSurface"],
-//       ),
-//     ),
-//     headlineMedium: GoogleFonts.bebasNeue(
-//       textStyle: TextStyle(
-//         color: darkColors["onSurface"],
-//       ),
-//     ),
-//     headlineLarge: GoogleFonts.bebasNeue(
-//       textStyle: TextStyle(
-//         color: darkColors["onSurface"],
-//       ),
-//     ),
-//     displaySmall: GoogleFonts.bebasNeue(
-//       textStyle: TextStyle(
-//         color: darkColors["onSurface"],
-//       ),
-//     ),
-//     displayMedium: GoogleFonts.bebasNeue(
-//       textStyle: TextStyle(
-//         color: darkColors["onSurface"],
-//       ),
-//     ),
-//     displayLarge: GoogleFonts.bebasNeue(
-//       textStyle: TextStyle(
-//         color: darkColors["onSurface"],
-//       ),
-//     ),
-//     labelSmall: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: darkColors["onSurface"],
-//       ),
-//     ),
-//     labelMedium: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: darkColors["onSurface"],
-//       ),
-//     ),
-//     labelLarge: GoogleFonts.raleway(
-//       textStyle: TextStyle(
-//         color: darkColors["onSurface"],
-//       ),
-//     ),
-//   ),
-// );

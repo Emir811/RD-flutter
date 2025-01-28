@@ -27,7 +27,7 @@ class VoiceScreen extends StatelessWidget {
                 floating: true,
                 pinned: true,
                 backgroundColor: Colors.purple.shade700, 
-                title: Text(
+                title: const Text(
                   "İlan ver",
                   style: TextStyle(
                     fontSize: 32,
@@ -39,10 +39,10 @@ class VoiceScreen extends StatelessWidget {
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
                   child: Column(
                     children: [
-                      SizedBox(height: 24),
+                      const SizedBox(height: 24),
                       Text(
                         "İlan vereceğiniz kategoriyi seçiniz",
                         style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -51,10 +51,10 @@ class VoiceScreen extends StatelessWidget {
                               color: Colors.purple.shade700, 
                             ),
                       ),
-                      SizedBox(height: 16),
+                      const SizedBox(height: 16),
                       GridView.count(
                         shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         crossAxisCount: 3,
                         mainAxisSpacing: 16,
                         crossAxisSpacing: 16,
@@ -72,7 +72,7 @@ class VoiceScreen extends StatelessWidget {
                                 children: [
                                   Expanded(
                                     child: ClipRRect(
-                                      borderRadius: BorderRadius.vertical(
+                                      borderRadius: const BorderRadius.vertical(
                                           top: Radius.circular(16)), 
                                       child: Image.asset(
                                         "assets/images/ressim${index + 1}.jpg",
@@ -82,7 +82,7 @@ class VoiceScreen extends StatelessWidget {
                                   ),
                                   Container(
                                     color: Colors.purple.shade50, 
-                                    padding: EdgeInsets.all(12),
+                                    padding: const EdgeInsets.all(12),
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
@@ -91,7 +91,7 @@ class VoiceScreen extends StatelessWidget {
                                           color: Colors.purple.shade700,
                                           size: 20,
                                         ),
-                                        SizedBox(width: 8),
+                                        const SizedBox(width: 8),
                                         Text(
                                           categories[index],
                                           style: TextStyle(
@@ -103,10 +103,10 @@ class VoiceScreen extends StatelessWidget {
                                       ],
                                     ),
                                   ),
-                                  SizedBox(height: 12),
+                                  const SizedBox(height: 12),
                                   FilledButton(
                                     onPressed: () {},
-                                    child: Text(
+                                    child: const Text(
                                       'Seç',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
@@ -114,7 +114,7 @@ class VoiceScreen extends StatelessWidget {
                                     ),
                                     style: FilledButton.styleFrom(
                                       backgroundColor: Colors.purple.shade600, 
-                                      minimumSize: Size(double.infinity, 48), 
+                                      minimumSize: const Size(double.infinity, 48), 
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(8),
                                       ),
@@ -135,7 +135,7 @@ class VoiceScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 }

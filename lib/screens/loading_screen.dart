@@ -13,10 +13,8 @@ class LoadingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SizedBox.expand(
-        // width: double.infinity,
         child: Column(
           children: [
-            // Logo bölümü
             Expanded(
               child: Container(
                 width: 150,
@@ -27,10 +25,6 @@ class LoadingScreen extends StatelessWidget {
                 ),
               ),
             ),
-
-            // Yükleniyor yazısı
-            // CircularProgressIndicator(),
-
             InkWell(
               onTap: () => context.go("/home"),
               child: SizedBox(
@@ -47,7 +41,25 @@ class LoadingScreen extends StatelessWidget {
                 ),
               ),
             ),
-            // biraz boslok lazim
+            SizedBox(height: 20),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(
+                  color: const Color.fromARGB(255, 192, 28, 233), 
+                  width: 2,
+                ),
+              ),
+              child: Text(
+                "Yükleniyor...",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: const Color.fromARGB(255, 192, 28, 233), 
+                ),
+              ),
+            ),
             SizedBox(height: 20),
           ],
         ),
