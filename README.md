@@ -18,6 +18,7 @@ Takım Üyeleri:
 X [emir811](https://github.com/Emir811)
 
 Özellikler
+
 [basit arayüzü sayesinde herkesin kullanabilmesi]
 
 [gece gündüz renk modları olması]
@@ -25,6 +26,7 @@ X [emir811](https://github.com/Emir811)
 [kolay ulaşılabilmesi]
 
 Kullanılan Teknolojiler
+
 Flutter
 
 Dart
