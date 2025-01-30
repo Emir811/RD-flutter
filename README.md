@@ -65,16 +65,6 @@ lib/
 Ekran Görüntüleri
 [Uygulama ekran görüntüleri buraya eklenecek]
 
-Projeye Katkı Sağlama
-Projeyi forklayın
-
-Yeni bir dal oluşturun (git checkout -b ozellik/YeniOzellik)
-
-Değişikliklerinizi kaydedin (git commit -m 'Yeni özellik eklendi')
-
-Dalınıza gönderin (git push origin ozellik/YeniOzellik)
-
-Pull Request oluşturun
 
 Lisans
 [Lisans türü] kapsamında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasını inceleyebilirsiniz.
