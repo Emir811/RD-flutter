@@ -78,6 +78,10 @@ Ekran Görüntüleri
 ![Image](https://github.com/user-attachments/assets/94453a88-0119-4f5e-9d20-d027f5206236)
 
 
+DEMO VİDEO 
+
+https://github.com/user-attachments/assets/b9dd47cd-1e42-4ae3-b782-bc9d9168aba4
+
 Lisans
 [Lisans türü] kapsamında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasını inceleyebilirsiniz.
 
