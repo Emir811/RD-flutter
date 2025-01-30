@@ -1,4 +1,4 @@
-^#flutter projesi
+RD satiyo flutter projesi
 ![istinye üniversitesi](https://www.unitededucation.com/linklogoch/istinye-university-logo.png)
 
 
@@ -7,24 +7,26 @@
 
 
 Proje Hakkında
-[elinizde bulunan sıfır veya ikinci el ürünlerinizi satma imkanı sunan bir uygulama]
+[elinizde bulunan sıfır veya ikinci el ürünlerinizi satma veya satın alma imkanı sunan bir uygulama]
 
 Ekibimiz
 Danışman:
-[https://github.com/keyvanarasteh](Keyvan Arasteh)
+[https://github.com/keyvanarasteh] (Keyvan Arasteh)
 
 Takım Üyeleri:
 
 X [emir811](https://github.com/Emir811)
 
 Özellikler
-[Ana özellik 1]
 
-[Ana özellik 2]
+[basit arayüzü sayesinde herkesin kullanabilmesi]
 
-[Ana özellik 3]
+[gece gündüz renk modları olması]
+
+[kolay ulaşılabilmesi]
 
 Kullanılan Teknolojiler
+
 Flutter
 
 Dart
@@ -65,22 +67,12 @@ lib/
 Ekran Görüntüleri
 [Uygulama ekran görüntüleri buraya eklenecek]
 
-Projeye Katkı Sağlama
-Projeyi forklayın
-
-Yeni bir dal oluşturun (git checkout -b ozellik/YeniOzellik)
-
-Değişikliklerinizi kaydedin (git commit -m 'Yeni özellik eklendi')
-
-Dalınıza gönderin (git push origin ozellik/YeniOzellik)
-
-Pull Request oluşturun
 
 Lisans
 [Lisans türü] kapsamında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasını inceleyebilirsiniz.
 
 İletişim
-Proje Bağlantısı: [GitHub repository linki]
+Proje Bağlantısı: [[GitHub repository linki](https://github.com/Emir811/RD-flutter)]
 
 İstinye Üniversitesi: https://www.istinye.edu.tr/
 
@@ -88,5 +80,3 @@ Teşekkürler
 İstinye Üniversitesi'ne destekleri için teşekkür ederiz
 
 [Diğer teşekkürler]
-
-Bunlari degistirmeniz gerekmektedir ;-)
