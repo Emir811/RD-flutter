@@ -1,4 +1,4 @@
-^#flutter projesi
+RD satiyo flutter projesi
 ![istinye üniversitesi](https://www.unitededucation.com/linklogoch/istinye-university-logo.png)
 
 
