@@ -43,10 +43,10 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.purple, // Mor renkli AppBar
+        backgroundColor: Colors.purple, 
         title: const Text("Giriş Yap", style: TextStyle(fontSize: 18)),
         centerTitle: true,
-        elevation: 0, // AppBar gölgesini kaldırdım
+        elevation: 0, 
       ),
       body: Center(
         child: SizedBox(
@@ -54,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Logo
+              
               Container(
                 width: 150,
                 height: 150,
@@ -65,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 40),
 
-              // E-posta TextField
+              
               TextField(
                 controller: epostaYonetici,
                 decoration: InputDecoration(
@@ -83,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 16),
 
-              // Şifre TextField
+              
               TextFormField(
                 obscureText: true,
                 controller: sifreYonetici,
@@ -102,11 +102,11 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 24),
 
-              // Giriş Yap Butonu
+              
               ElevatedButton(
                 onPressed: girisYap,
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 50), backgroundColor: Colors.purple, // Mor arka plan
+                  minimumSize: const Size(double.infinity, 50), backgroundColor: Colors.purple, 
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -115,13 +115,13 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 12),
 
-              // Kayıt Ol Butonu
+              
               ElevatedButton(
                 onPressed: () {
                   context.pushReplacement("/register");
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 50), backgroundColor: Colors.purple, // Mor arka plan
+                  minimumSize: const Size(double.infinity, 50), backgroundColor: Colors.purple, 
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -130,7 +130,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 24),
 
-              // Google ile giriş butonu
+              
               OutlinedButton.icon(
                 onPressed: () {},
                 style: OutlinedButton.styleFrom(
@@ -146,7 +146,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 12),
 
-              // Apple ID ile giriş butonu
+              
               OutlinedButton.icon(
                 onPressed: () {},
                 style: OutlinedButton.styleFrom(

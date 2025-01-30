@@ -15,101 +15,99 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Ayarlar'),
-        backgroundColor: Colors.purple, // Purple AppBar background
+        backgroundColor: Colors.purple, 
         elevation: 0,
       ),
       body: ListView(
         children: [
-          // Theme Option
+          
           ListTile(
-            leading: const Icon(Icons.palette, color: Colors.purple), // Purple icon
+            leading: const Icon(Icons.palette, color: Colors.purple), 
             title: const Text(
               'Tema',
-              style: TextStyle(color: Colors.purple), // Purple text
+              style: TextStyle(color: Colors.purple), 
             ),
             trailing: Switch(
               value: Theme.of(context).brightness == Brightness.dark,
               onChanged: (value) {
                 context.read<ThemeProvider>().toggleTheme();
               },
-              activeColor: Colors.purple, // Purple switch color
+              activeColor: Colors.purple, 
             ),
           ),
-          const Divider(color: Colors.purple), // Purple divider
+          const Divider(color: Colors.purple), 
 
-          // Notifications Option
+          
           ListTile(
-            leading: const Icon(Icons.notifications, color: Colors.purple), // Purple icon
+            leading: const Icon(Icons.notifications, color: Colors.purple), 
             title: const Text(
               'Bildirimler',
-              style: TextStyle(color: Colors.purple), // Purple text
+              style: TextStyle(color: Colors.purple), 
             ),
             trailing: Switch(
               value: true,
               onChanged: (value) {},
-              activeColor: Colors.purple, // Purple switch color
+              activeColor: Colors.purple, 
             ),
           ),
-          const Divider(color: Colors.purple), // Purple divider
+          const Divider(color: Colors.purple), 
 
           // Language Option
           ListTile(
-            leading: const Icon(Icons.language, color: Colors.purple), // Purple icon
+            leading: const Icon(Icons.language, color: Colors.purple), 
             title: const Text(
               'Dil',
-              style: TextStyle(color: Colors.purple), // Purple text
+              style: TextStyle(color: Colors.purple),
             ),
             trailing: DropdownButton<String>(
               value: 'TR',
               items: ['TR', 'EN'].map((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
-                  child: Text(value, style: const TextStyle(color: Colors.purple)), // Purple text
+                  child: Text(value, style: const TextStyle(color: Colors.purple)), 
                 );
               }).toList(),
               onChanged: (String? newValue) {},
-              dropdownColor: Colors.white, // White background for dropdown
-              iconEnabledColor: Colors.purple, // Purple icon
+              dropdownColor: Colors.white, 
+              iconEnabledColor: Colors.purple, 
             ),
           ),
-          const Divider(color: Colors.purple), // Purple divider
+          const Divider(color: Colors.purple), 
 
-          // About App Option
+          
           ListTile(
-            leading: const Icon(Icons.info, color: Colors.purple), // Purple icon
+            leading: const Icon(Icons.info, color: Colors.purple), 
             title: const Text(
               'Uygulama Hakkında',
-              style: TextStyle(color: Colors.purple), // Purple text
+              style: TextStyle(color: Colors.purple), 
             ),
-            trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.purple), // Purple icon
+            trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.purple),
             onTap: () {},
           ),
-          const Divider(color: Colors.purple), // Purple divider
+          const Divider(color: Colors.purple), 
 
-          // Privacy Policy Option
           ListTile(
-            leading: const Icon(Icons.privacy_tip, color: Colors.purple), // Purple icon
+            leading: const Icon(Icons.privacy_tip, color: Colors.purple), 
             title: const Text(
               'Gizlilik Politikası',
-              style: TextStyle(color: Colors.purple), // Purple text
+              style: TextStyle(color: Colors.purple),
             ),
-            trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.purple), // Purple icon
+            trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.purple), 
             onTap: () {},
           ),
-          const Divider(color: Colors.purple), // Purple divider
+          const Divider(color: Colors.purple), 
 
-          // Delete Account Option
           ListTile(
-            leading: const Icon(Icons.delete, color: Colors.red), // Red icon
+            leading: const Icon(Icons.delete, color: Colors.red), 
             title: const Text(
               'Hesabı Sil',
-              style: TextStyle(color: Colors.red), // Red text
+              style: TextStyle(color: Colors.red), 
             ),
             onTap: () {},
           ),
         ],
       ),
-      backgroundColor: Colors.white, // White background for the body
+      backgroundColor: Colors.white, 
     );
   }
 }

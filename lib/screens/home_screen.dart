@@ -18,11 +18,11 @@ class HomeScreen extends StatelessWidget {
         title: Container(
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           decoration: BoxDecoration(
-            color: Colors.purple, // Set background color to purple
+            color: Colors.purple, 
             borderRadius: BorderRadius.circular(30),
             boxShadow: [
               BoxShadow(
-                color: Colors.purple.withOpacity(0.4), // Add shadow to title
+                color: Colors.purple.withOpacity(0.4), 
                 blurRadius: 10,
                 offset: const Offset(0, 4),
               ),
@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,
-              color: Colors.white, // Set text color to white
+              color: Colors.white, 
             ),
           ),
         ),
@@ -46,8 +46,8 @@ class HomeScreen extends StatelessWidget {
             },
           ),
         ],
-        backgroundColor: Colors.transparent, // Make AppBar transparent
-        elevation: 0, // Remove default AppBar shadow
+        backgroundColor: Colors.transparent, 
+        elevation: 0, 
       ),
       drawer: Drawer(
         child: Column(
@@ -130,7 +130,7 @@ class HomeScreen extends StatelessWidget {
                 child: ListView(
                   padding: const EdgeInsets.all(24),
                   children: [
-                    // "Öne Çıkan İlanlar" başlığı
+                    
                     const Text(
                       "Öne Çıkan İlanlar",
                       style: TextStyle(
@@ -141,18 +141,18 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
 
-                    // 4 adet yan yana fotoğraf yeri ve altlarına yazı
+                    
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Fotoğraf 1
+                        
                         Expanded(
                           child: Padding(
                             padding: const EdgeInsets.only(right: 8),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                // Fotoğraf çerçevesi
+                                
                                 Container(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(16),
@@ -184,14 +184,14 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         
-                        // Fotoğraf 2
+                        
                         Expanded(
                           child: Padding(
                             padding: const EdgeInsets.only(right: 8),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                // Fotoğraf çerçevesi
+                                
                                 Container(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(16),
@@ -223,14 +223,14 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
 
-                        // Fotoğraf 3
+                        
                         Expanded(
                           child: Padding(
                             padding: const EdgeInsets.only(right: 8),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                // Fotoğraf çerçevesi
+                                
                                 Container(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(16),
@@ -262,14 +262,14 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
 
-                        // Fotoğraf 4
+                        
                         Expanded(
                           child: Padding(
                             padding: const EdgeInsets.only(right: 8),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                // Fotoğraf çerçevesi
+                                
                                 Container(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(16),
@@ -304,7 +304,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 24),
 
-                    // "İlan Ver" kısmı alt kısımda, fotoğraflardan bağımsız
+                  
                     Container(
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       decoration: BoxDecoration(
@@ -321,11 +321,11 @@ class HomeScreen extends StatelessWidget {
                           const Icon(Icons.add_circle_outline, color: Colors.purple),
                           const SizedBox(width: 8),
                           TextButton(
-                            onPressed: () => context.push("/voice"), // Yönlendirme
+                            onPressed: () => context.push("/voice"), 
                             child: const Text(
                               "İlan Ver",
                               style: TextStyle(
-                                fontSize: 18, // Font büyüklüğünü artırdım
+                                fontSize: 18, 
                                 fontWeight: FontWeight.bold,
                                 color: Colors.purple,
                               ),
@@ -336,7 +336,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
 
-                    // "Profil" kısmı
+                    
                     Container(
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       decoration: BoxDecoration(
@@ -353,11 +353,11 @@ class HomeScreen extends StatelessWidget {
                           const Icon(CupertinoIcons.person_circle, color: Colors.purple),
                           const SizedBox(width: 8),
                           TextButton(
-                            onPressed: () => context.push("/profile"), // Yönlendirme
+                            onPressed: () => context.push("/profile"), 
                             child: const Text(
                               "Profil",
                               style: TextStyle(
-                                fontSize: 18, // Font büyüklüğünü artırdım
+                                fontSize: 18, 
                                 fontWeight: FontWeight.bold,
                                 color: Colors.purple,
                               ),
@@ -368,7 +368,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
 
-                    // "Arama" kısmı
+                    
                     Container(
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       decoration: BoxDecoration(
@@ -385,11 +385,11 @@ class HomeScreen extends StatelessWidget {
                           const Icon(CupertinoIcons.search, color: Colors.purple),
                           const SizedBox(width: 8),
                           TextButton(
-                            onPressed: () => context.push("/search"), // Yönlendirme
+                            onPressed: () => context.push("/search"), 
                             child: const Text(
                               "Arama",
                               style: TextStyle(
-                                fontSize: 18, // Font büyüklüğünü artırdım
+                                fontSize: 18, 
                                 fontWeight: FontWeight.bold,
                                 color: Colors.purple,
                               ),

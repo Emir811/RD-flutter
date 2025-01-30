@@ -14,7 +14,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Kayıt Ol'),
-        backgroundColor: Colors.purple, // Purple AppBar
+        backgroundColor: Colors.purple, 
         elevation: 0,
       ),
       body: Center(
@@ -23,65 +23,63 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Name TextField
+              
               TextField(
                 decoration: InputDecoration(
                   hintText: "Ad Soyad",
-                  hintStyle: const TextStyle(color: Colors.purple), // Purple hint text
+                  hintStyle: const TextStyle(color: Colors.purple), 
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Colors.purple), // Purple border
+                    borderSide: const BorderSide(color: Colors.purple), 
                   ),
-                  prefixIcon: const Icon(Icons.person, color: Colors.purple), // Purple icon
+                  prefixIcon: const Icon(Icons.person, color: Colors.purple), 
                 ),
               ),
               const SizedBox(height: 16),
 
-              // Email TextField
+              
               TextField(
                 decoration: InputDecoration(
                   hintText: "E-Posta",
-                  hintStyle: const TextStyle(color: Colors.purple), // Purple hint text
+                  hintStyle: const TextStyle(color: Colors.purple), 
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Colors.purple), // Purple border
+                    borderSide: const BorderSide(color: Colors.purple), 
                   ),
-                  prefixIcon: const Icon(Icons.email, color: Colors.purple), // Purple icon
+                  prefixIcon: const Icon(Icons.email, color: Colors.purple), 
                 ),
               ),
               const SizedBox(height: 16),
 
-              // Password TextField
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: "Şifre",
-                  hintStyle: const TextStyle(color: Colors.purple), // Purple hint text
+                  hintStyle: const TextStyle(color: Colors.purple), 
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Colors.purple), // Purple border
+                    borderSide: const BorderSide(color: Colors.purple), 
                   ),
-                  prefixIcon: const Icon(Icons.lock, color: Colors.purple), // Purple icon
+                  prefixIcon: const Icon(Icons.lock, color: Colors.purple), 
                 ),
               ),
               const SizedBox(height: 16),
 
-              // Confirm Password TextField
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: "Şifre Tekrar",
-                  hintStyle: const TextStyle(color: Colors.purple), // Purple hint text
+                  hintStyle: const TextStyle(color: Colors.purple), 
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Colors.purple), // Purple border
+                    borderSide: const BorderSide(color: Colors.purple), 
                   ),
-                  prefixIcon: const Icon(Icons.lock_outline, color: Colors.purple), // Purple icon
+                  prefixIcon: const Icon(Icons.lock_outline, color: Colors.purple), 
                 ),
               ),
               const SizedBox(height: 24),
 
-              // Register Button
+              
               FilledButton(
                 onPressed: () {
                   context.go("/home");
@@ -91,14 +89,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  backgroundColor: Colors.purple, // Purple background
-                  foregroundColor: Colors.white, // White text
+                  backgroundColor: Colors.purple, 
+                  foregroundColor: Colors.white, 
                 ),
                 child: const Text("Kayıt Ol", style: TextStyle(fontSize: 16)),
               ),
               const SizedBox(height: 12),
 
-              // Login Button
+              
               OutlinedButton(
                 onPressed: () {
                   context.push("/login");
@@ -108,7 +106,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  side: const BorderSide(color: Colors.purple), // Purple border
+                  side: const BorderSide(color: Colors.purple), 
                 ),
                 child: const Text("Giriş Yap", style: TextStyle(fontSize: 16, color: Colors.purple)),
               ),

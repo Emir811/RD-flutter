@@ -10,10 +10,10 @@ class BottomMenu extends StatelessWidget {
     return Container(
       height: 70,
       decoration: BoxDecoration(
-        color: Colors.white, // Arka plan rengi
+        color: Colors.white, 
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1), // Hafif gölge efekti
+            color: Colors.black.withOpacity(0.1), 
             blurRadius: 10,
             spreadRadius: 2,
             offset: Offset(0, -2),
@@ -27,7 +27,7 @@ class BottomMenu extends StatelessWidget {
         children: [
           _buildIcon(context, CupertinoIcons.home, "/home"),
           _buildIcon(context, CupertinoIcons.search, "/search"),
-          _buildCenterButton(context), // Orta buton özel tasarım
+          _buildCenterButton(context), 
           _buildIcon(context, Icons.history, "/history"),
           _buildIcon(context, CupertinoIcons.person, "/profile"),
         ],
@@ -35,7 +35,7 @@ class BottomMenu extends StatelessWidget {
     );
   }
 
-  // Küçük ikon butonları için widget
+  
   Widget _buildIcon(BuildContext context, IconData icon, String route) {
     return IconButton(
       onPressed: () => context.go(route),
@@ -43,7 +43,6 @@ class BottomMenu extends StatelessWidget {
     );
   }
 
-  // Orta kısımdaki '+' butonunu özel tasarım yapalım
   Widget _buildCenterButton(BuildContext context) {
     return InkWell(
       onTap: () => context.go("/voice"),
@@ -52,7 +51,7 @@ class BottomMenu extends StatelessWidget {
         width: 55,
         height: 55,
         decoration: BoxDecoration(
-          color: Colors.purple, // Mor renk
+          color: Colors.purple, 
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(

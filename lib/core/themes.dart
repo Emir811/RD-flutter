@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// theme_provider.dart
+
 class ThemeProvider with ChangeNotifier {
   bool _isDark = false;
   bool get isDark => _isDark;
@@ -13,30 +13,30 @@ class ThemeProvider with ChangeNotifier {
 }
 
 const lightColors = {
-  "primary": Color(0xFF7F4A9F), // Mor tonları
-  "onPrimary": Color(0xFFFFFFFF), // Beyaz
-  "secondary": Color(0xFFF1F1F1), // Açık gri
-  "onSecondary": Color(0xFF524C64), // Koyu gri
-  "surface": Color(0xFFFFFFFF), // Beyaz
-  "onSurface": Color(0xFF524C64), // Koyu gri
+  "primary": Color(0xFF7F4A9F), 
+  "onPrimary": Color(0xFFFFFFFF), 
+  "secondary": Color(0xFFF1F1F1), 
+  "onSecondary": Color(0xFF524C64), 
+  "surface": Color(0xFFFFFFFF), 
+  "onSurface": Color(0xFF524C64), 
   "success": Colors.green,
   "error": Colors.red,
   "onError": Colors.white,
 };
 
 const darkColors = {
-  "primary": Color(0xFF512D6D), // Koyu mor
-  "onPrimary": Color(0xFFF1F1F1), // Beyaz
-  "secondary": Color(0xFF232B36), // Koyu gri
-  "onSecondary": Color(0xFFF1F1F1), // Beyaz
-  "surface": Color(0xFF171D2B), // Çok koyu gri
-  "onSurface": Color(0xFFF5F5F5), // Açık gri
+  "primary": Color(0xFF512D6D), 
+  "onPrimary": Color(0xFFF1F1F1), 
+  "secondary": Color(0xFF232B36), 
+  "onSecondary": Color(0xFFF1F1F1), 
+  "surface": Color(0xFF171D2B), 
+  "onSurface": Color(0xFFF5F5F5), 
   "success": Colors.green,
   "error": Colors.red,
   "onError": Colors.white,
 };
 
-// Gündüz modu teması (Light Theme)
+
 final lightTheme = ThemeData(
   brightness: Brightness.light,
   colorScheme: ColorScheme(
@@ -69,7 +69,7 @@ final lightTheme = ThemeData(
   ),
 );
 
-// Gece modu teması (Dark Theme)
+
 final darkTheme = ThemeData(
   brightness: Brightness.dark,
   colorScheme: ColorScheme.dark(

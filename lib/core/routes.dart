@@ -10,9 +10,9 @@ import '../screens/search_screen.dart';
 import '../screens/settings_screen.dart';
 import '../screens/voice_screen.dart';
 
-// Router yapılandırması
+
 final router = GoRouter(
-  initialLocation: '/', // Başlangıç rotası
+  initialLocation: '/', 
   routes: [
     GoRoute(
       path: '/',

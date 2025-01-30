@@ -40,7 +40,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
         ],
       ),
       body: Container(
-        color: const Color.fromARGB(255, 177, 177, 177), // Set background color here
+        color: const Color.fromARGB(255, 177, 177, 177), 
         child: Column(
           children: [
             Padding(
