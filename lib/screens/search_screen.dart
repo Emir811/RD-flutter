@@ -201,7 +201,7 @@ class SearchScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: const BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),//
     );
   }
 }

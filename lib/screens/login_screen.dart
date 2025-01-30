@@ -160,7 +160,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 label: const Text("Apple ID ile Giriş Yap",
                     style: TextStyle(fontSize: 16, color: Colors.purple)),
               ),
-            ],
+            ], //
           ),
         ),
       ),

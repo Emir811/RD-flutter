@@ -17,7 +17,7 @@ class LoadingScreen extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                width: 150,
+                width: 150, //
                 height: 150,
                 child: Image.asset(
                   'assets/images/logo.png',

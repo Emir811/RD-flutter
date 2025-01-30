@@ -106,7 +106,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  side: const BorderSide(color: Colors.purple), 
+                  side: const BorderSide(color: Colors.purple), //
                 ),
                 child: const Text("Giriş Yap", style: TextStyle(fontSize: 16, color: Colors.purple)),
               ),

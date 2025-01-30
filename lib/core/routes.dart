@@ -23,14 +23,14 @@ final router = GoRouter(
     ),
     GoRoute(
       path: '/home',
-      pageBuilder: (context, state) => NoTransitionPage<void>(
+      pageBuilder: (context, state) => NoTransitionPage<void>( //
         key: state.pageKey,
         child: const HomeScreen(),
       ),
     ),
     GoRoute(
       path: '/profile',
-      pageBuilder: (context, state) => NoTransitionPage<void>(
+      pageBuilder: (context, state) => NoTransitionPage<void>( 
         key: state.pageKey,
         child: const ProfileScreen(),
       ),

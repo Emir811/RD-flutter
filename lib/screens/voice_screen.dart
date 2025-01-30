@@ -135,7 +135,7 @@ class VoiceScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: const BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),//
     );
   }
 }

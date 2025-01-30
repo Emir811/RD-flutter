@@ -98,7 +98,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           const Divider(color: Colors.purple), 
 
           ListTile(
-            leading: const Icon(Icons.delete, color: Colors.red), 
+            leading: const Icon(Icons.delete, color: Colors.red), //
             title: const Text(
               'Hesabı Sil',
               style: TextStyle(color: Colors.red), 

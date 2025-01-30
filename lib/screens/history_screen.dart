@@ -10,7 +10,7 @@ class HistoryScreen extends StatefulWidget {
   State<HistoryScreen> createState() => _HistoryScreenState();
 }
 
-class _HistoryScreenState extends State<HistoryScreen> {
+class _HistoryScreenState extends State<HistoryScreen> { //
   final List<String> productImages = [
     "assets/images/urun1.webp",
     "assets/images/urun9.webp",
