@@ -7,7 +7,7 @@
 
 
 Proje Hakkında
-[elinizde bulunan sıfır veya ikinci el ürünlerinizi satma imkanı sunan bir uygulama]
+[elinizde bulunan sıfır veya ikinci el ürünlerinizi satma veya satın alma imkanı sunan bir uygulama]
 
 Ekibimiz
 Danışman:
@@ -18,11 +18,11 @@ Takım Üyeleri:
 X [emir811](https://github.com/Emir811)
 
 Özellikler
-[Ana özellik 1]
+[basit arayüzü sayesinde herkesin kullanabilmesi]
 
-[Ana özellik 2]
+[gece gündüz renk modları olması]
 
-[Ana özellik 3]
+[kolay ulaşılabilmesi]
 
 Kullanılan Teknolojiler
 Flutter
@@ -80,7 +80,7 @@ Lisans
 [Lisans türü] kapsamında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasını inceleyebilirsiniz.
 
 İletişim
-Proje Bağlantısı: [GitHub repository linki]
+Proje Bağlantısı: [[GitHub repository linki](https://github.com/Emir811/RD-flutter)]
 
 İstinye Üniversitesi: https://www.istinye.edu.tr/
 
@@ -88,5 +88,3 @@ Teşekkürler
 İstinye Üniversitesi'ne destekleri için teşekkür ederiz
 
 [Diğer teşekkürler]
-
-Bunlari degistirmeniz gerekmektedir ;-)
