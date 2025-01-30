@@ -16,12 +16,12 @@ class BottomMenu extends StatelessWidget {
             color: Colors.black.withOpacity(0.1), 
             blurRadius: 10,
             spreadRadius: 2,
-            offset: Offset(0, -2),
+            offset: const Offset(0, -2),
           ),
         ],
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -61,7 +61,7 @@ class BottomMenu extends StatelessWidget {
             ),
           ],
         ),
-        child: Icon(Icons.add, size: 35, color: Colors.white),//
+        child: const Icon(Icons.add, size: 35, color: Colors.white),//
       ),
     );
   }

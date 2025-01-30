@@ -16,7 +16,7 @@ class LoadingScreen extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
-              child: Container(
+              child: SizedBox(
                 width: 150, //
                 height: 150,
                 child: Image.asset(
@@ -41,7 +41,7 @@ class LoadingScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               decoration: BoxDecoration(
